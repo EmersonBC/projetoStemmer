@@ -6,10 +6,12 @@ import java.rmi.RemoteException;
 
 public class Main {
 
-	public static void main(String[] args)  throws RemoteException, MalformedURLException {
+	private static final String PATH_RMI = "rmi://localhost/radical";
+
+	public static void main(String[] args) throws RemoteException, MalformedURLException {
 		Servidor server = new Servidor();
-		
-		Naming.rebind("rmi://localhost/radical", server);
+
+		Naming.rebind(PATH_RMI, server);
 	}
 
 }
